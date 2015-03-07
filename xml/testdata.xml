@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quiz [<!ELEMENT quiz (title, help, items)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT help (#PCDATA)>
+<!ELEMENT items (item)+>
+<!ELEMENT item (question, sound, answer, answer+)>
+<!ELEMENT question (#PCDATA)>
+<!ELEMENT answer (#PCDATA)>
+<!ELEMENT sound (#PCDATA)>
+<!ATTLIST answer correct (y) #IMPLIED>]>
+<quiz>
+	<title>Minitest</title>
+	<help>Minitest
+	Klicka på rätt alternativ till varje uppgift. Gör du rätt från början får du 4 poäng. För varje misstag du gör får du poängavdrag.
+	En del uppgifter består av att du ska lyssna på något. Då syns en Escuchar-knapp. Sätt musmarkören över knappen för att lyssna. Om du vill du lyssna flera gånger klicka på knappen.
+		<item> test </item>
+	</help>
+	<items>
+		<item>
+			<question>¿Qué número es?</question>
+			<sound>20121029173734_07siete.mp3</sound>
+			<answer correct="y">7</answer>
+			<answer>8</answer>
+			<answer>9</answer>
+			<answer>6</answer>
+		</item>
+		<item>
+			<question>¿Qué número es?</question>
+			<sound>20121029173900_09nueve.mp3</sound>
+			<answer correct="y">9</answer>
+			<answer>7</answer>
+			<answer>6</answer>
+			<answer>8</answer>
+		</item>
+		<item>
+			<question>Lyssna. Vad kan du svara på denna fråga.</question>
+			<sound>20121029174123_01 holaComoTeLlamas.mp3</sound>
+			<answer correct="y">Me llamo Eva.</answer>
+			<answer>Muy bien.</answer>
+			<answer>¿Qué tal?</answer>
+			<answer>Tres.</answer>
+		</item>
+		<item>
+			<question>10 9 8</question>
+			<sound></sound>
+			<answer correct="y">diez nueve ocho</answer>
+			<answer>diez ocho nueve </answer>
+			<answer>nueve diez ocho</answer>
+			<answer>diez cinco ocho</answer>
+		</item>
+		<item>
+			<question>Hola, me ... Paula.</question>
+			<sound></sound><answer correct="y">llamo</answer>
+			<answer>llamas</answer><answer>buenos</answer>
+			<answer>bien</answer></item><item><question>−Adiós.   ...</question>
+			<sound></sound><answer correct="y">−Hasta luego.</answer>
+			<answer>−Buenos días.</answer><answer>−Me llamo Pedro.</answer>
+			<answer>−Muy bien.</answer>
+		</item>
+		<item>
+			<question>bra</question>
+			<sound></sound>
+			<answer correct="y">bien</answer>
+			<answer>gracias</answer><answer>y</answer>
+			<answer>tú</answer>
+		</item>
+		<item>
+			<question>du heter</question>
+			<sound></sound>
+			<answer correct="y">te llamas</answer>
+			<answer>me llamo</answer>
+			<answer>se llama</answer>
+			<answer>¿qué tal?</answer>
+		</item>
+		<item>
+			<question>7</question>
+			<sound></sound>
+			<answer correct="y">siete</answer>
+			<answer>ocho</answer>
+			<answer>nueve</answer>
+			<answer>seis</answer>
+		</item>
+		<item>
+			<question>−Hola, ¿qué tal?</question>
+			<sound></sound>
+			<answer>−Me llamo Roberto.</answer>
+			<answer correct="y">−Muy bien, gracias.</answer>
+			<answer>− Ocho y nueve.</answer>
+			<answer>−Hasta luego.</answer>
+		</item>
+		<item>
+			<question>−Adiós. ...</question>
+			<sound></sound>
+			<answer correct="y">−Hasta luego.</answer>
+			<answer>−Buenos días.</answer>
+			<answer>−Me llamo Pedro.</answer>
+			<answer>−Muy bien.</answer>
+		</item>
+		<item>
+			<question>bra</question>
+			<sound></sound>
+			<answer correct="y">bien</answer>
+			<answer>gracias</answer>
+			<answer>y</answer>
+			<answer>tú</answer>
+		</item>
+		<item>
+			<question>te llamas</question>
+			<sound></sound>
+			<answer correct="y">du heter</answer>
+			<answer>jag heter</answer>
+			<answer>han heter</answer>
+			<answer>bra, tack</answer>
+		</item>
+		<item>
+			<question>7</question>
+			<sound></sound>
+			<answer correct="y">siete</answer>
+			<answer>ocho</answer>
+			<answer>nueve</answer>
+			<answer>seis</answer>
+		</item><item>
+			<question>6</question>
+			<sound></sound>
+			<answer>nueve</answer>
+			<answer correct="y">seis</answer>
+			<answer>siete</answer>
+			<answer>cuatro</answer>
+		</item>
+			<item>
+			<question>Och du?</question>
+			<sound></sound>
+			<answer correct="y">¿Y tú?</answer>
+			<answer>¿Qué tal?</answer>
+			<answer>Muy bien</answer>
+			<answer>Sí, hasta luego.</answer>
+		</item>
+		<item>
+			<question>ocho, seis, siete</question>
+			<sound></sound>
+			<answer correct="y">8, 6, 7</answer>
+			<answer>8, 7, 6</answer>
+			<answer>7, 6, 8</answer>
+			<answer>6, 7, 8</answer>
+		</item>
+		<item>
+			<question>hej då</question>
+			<sound></sound>
+			<answer>muy bien</answer>
+			<answer>y tú</answer>
+			<answer correct="y">hasta luego</answer>
+			<answer>muy bien</answer>
+		</item>
+		<item>
+			<question>cuatro, siete, nueve</question>
+			<sound></sound>
+			<answer correct="y">4. 7. 9</answer>
+			<answer>7, 4, 9</answer>
+			<answer>4, 9, 7</answer>
+			<answer>4, 8, 9</answer>
+		</item>
+		<item>
+			<question>diez, cinco, siete</question>
+			<sound></sound>
+			<answer correct="y">10, 5, 7</answer>
+			<answer>10, 7, 5</answer>
+			<answer>5, 7, 10</answer>
+			<answer>7, 5, 10</answer>
+		</item>
+	</items>
+</quiz>
