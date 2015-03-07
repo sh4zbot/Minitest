@@ -13,7 +13,7 @@
 	<help>Minitest
 	Klicka på rätt alternativ till varje uppgift. Gör du rätt från början får du 4 poäng. För varje misstag du gör får du poängavdrag.
 	En del uppgifter består av att du ska lyssna på något. Då syns en Escuchar-knapp. Sätt musmarkören över knappen för att lyssna. Om du vill du lyssna flera gånger klicka på knappen.
-		<item> test </item>
+		
 	</help>
 	<items>
 		<item>
