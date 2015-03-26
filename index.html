@@ -1,65 +1,98 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minitest</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Minitest</title>
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> -->
-		
+		<!-- jQuery, only used for document ready-->
+		<script src="js/jquery.min.js"></script>
+
 		<!-- CSS -->
-		<!-- <link rel="stylesheet" href="css/style.css"> -->
-		<script src="js/loadXML.js"></script>
-	
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
   </head>
   <body>
-	
-	<div>
-		<b>Title:</b> <span id="title"></span><br />
-		<b>Help:</b> <span id="help"></span><br />
-		<b>Items:</b> <span id="items"></span><br />
-	</div>
-	
-	<script>
-	//var xmlDoc=loadXMLDoc("http://gracias.nu/test/generateXML.php?chapter_id=3&excercise_id=255&type=GL");
-	
-	//testdata from gracias.nu/exercises7/actions_s.php?item=quiz&action=getXMLwSound&quizid=13
-	xmlhttp=new XMLHttpRequest();
-	xmlhttp.open("GET","xml/testdata.xml",false);
-	xmlhttp.send();
-	xmlDoc=xmlhttp.responseXML;
-	/*
-	var quizNode=xmlDoc.firstChild;
-	document.getElementById("title").innerHTML = JSON.stringify(quizNode);
-	var quizTitleNode = quizNode.firstChild;
-	var title = quizTitleNode.firstChild.nodeValue;
-	
-	document.getElementById("title").innerHTML = title;
-	
-	*/
+		
+		<div class="container">
+			<div id="content" style="width:550px;">
+				<div class="row" style="padding-top:20px;">
+					<div class="col-md-8 col-xs-8">
+						<h4> Minitest </h4>
+						
+					</div>
+					<div class="col-md-2 col-xs-2">
+						
+							<button class="btn btn-info btn-block" id="help" type="submit"> 
+								<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+							</button>
+						
+					</div>
+					<div class="col-md-2 col-xs-2">
+					
+							<button class="btn btn-danger btn-block" id="exit" type="submit"> 
+								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							</button>
+						
+					</div>
+					
+				</div>
+				<hr/>
+				<div class ="row questionarea">
+					<div class="col-md-12 col-xs-12">
+						<span id="questionNumber"></span>
+						<span id="question"></span>
+						<br/><br/>
+						<p id="sound"> </p>
+						
+						
+						
+					</div>
+				</div>
+				<div class="row answersarea">
+					<div class="col-md-4 col-xs-4 ">
+						<button class="btn btn-default btn-block" id="answer1" type="submit">Answer 1</button>
+						<button class="btn btn-default btn-block" id="answer2" type="submit">Answer 2</button>
+					</div>
+					<div class="col-md-4 col-xs-4 ">
+						<button class="btn btn-default btn-block" id="answer3" type="submit">Answer 3</button>
+						<button class="btn btn-default btn-block" id="answer4" type="submit">Answer 4</button>
+					</div>
+					<div class="col-md-2">
+					</div>
+					<div class ="col-md-2 col-xs-2">
+						<p id="score"></p>
+						<p id="negscore"> </p>
+						<p id="plusscore"> </p>
+					</div>
+					
+					
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		
+		<script src="js/app.js"></script>
+		<script src="js/model.js"></script>
+		<script src="js/view.js"></script>
+		<script src="js/minitestCtrl.js"></script>
+		
+		<script>
+		
+		
+		</script>
+		
+		
 
-	document.getElementById("help").innerHTML=
-	xmlDoc.getElementsByTagName("question")[0].childNodes[0].nodeValue;
-	
-	document.getElementById("items").innerHTML=
-	xmlDoc.getElementsByTagName("items")[0].firstChild.nodeValue;
-	
-	var items = xmlDoc.getElementsByTagName("items")[0];
-	
-	
-	
-	
-	</script>
-	
-	
-
-	<!-- jQuery -->
-	<!--<script src="https://code.jquery.com/jquery.js"></script> -->
-	
-	<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-	<!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>	-->
+		<!-- jQuery -->
+		<!--<script src="https://code.jquery.com/jquery.js"></script> -->
+		
+		<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+		<!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>	-->
 
   </body>
 </html>

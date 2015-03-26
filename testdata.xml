@@ -50,8 +50,7 @@
 		</item>
 		<item>
 			<question>Hola, me ... Paula.</question>
-			<sound></sound>
-			<answer correct="y">llamo</answer>
+			<sound></sound><answer correct="y">llamo</answer>
 			<answer>llamas</answer><answer>buenos</answer>
 			<answer>bien</answer></item><item><question>−Adiós.   ...</question>
 			<sound></sound><answer correct="y">−Hasta luego.</answer>
@@ -62,8 +61,7 @@
 			<question>bra</question>
 			<sound></sound>
 			<answer correct="y">bien</answer>
-			<answer>gracias</answer>
-			<answer>y</answer>
+			<answer>gracias</answer><answer>y</answer>
 			<answer>tú</answer>
 		</item>
 		<item>

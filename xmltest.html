@@ -1,0 +1,47 @@
+<HTML>
+    <HEAD>
+        <TITLE>
+            Extracting XML Data
+        </TITLE>
+
+        <SCRIPT LANGUAGE="JavaScript">
+            function readXMLData()
+            {
+                var xmlDocumentObject, sessionNode, committeeNode,
+                    attendeesNode
+                var firstNameNode, lastNameNode, displayText
+                /*
+								xmlDocumentObject = new ActiveXObject("Microsoft.XMLDOM")
+                xmlDocumentObject.load("test.xml")
+								*/
+								xmlhttp=new XMLHttpRequest();
+								xmlhttp.open("GET","test.xml",false);
+								xmlhttp.send();
+								xmlDocumentObject=xmlhttp.responseXML;
+
+                sessionNode = xmlDocumentObject.documentElement
+                committeeNode = sessionNode.firstChild
+                attendeesNode = committeeNode.lastChild
+                senatorNode = attendeesNode.lastChild
+                firstNameNode = senatorNode.firstChild
+                lastNameNode = firstNameNode.nextSibling
+
+                displayText = "Last senator's name: " +
+                    firstNameNode.firstChild.nodeValue + ' '
+                    + lastNameNode.firstChild.nodeValue
+                displayDIV.innerHTML = displayText
+            }
+        </SCRIPT>
+    </HEAD>
+
+    <BODY>
+        <H1>
+            Extracting XML Data
+        </H1>
+
+        <INPUT TYPE="BUTTON" VALUE="Get the last senator's name"
+            ONCLICK="readXMLData()">
+        <BR>
+        <DIV ID="displayDIV"></DIV>
+    </BODY>
+</HTML>
