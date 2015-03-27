@@ -1,7 +1,7 @@
 var MinitestCtrl = function(view, model) {
 	
 	view.ans1.onclick = function () {
-		if (model.checkAns(0) ) {
+		if (model.checkAnsTuple(0) ) {
 			view.ans1.className = "btn btn-success btn-block";
 		}
 		else {
@@ -10,7 +10,7 @@ var MinitestCtrl = function(view, model) {
 	}
 	
 	view.ans2.onclick = function () {
-		if (model.checkAns(1) ) {
+		if (model.checkAnsTuple(1) ) {
 			view.ans2.className = "btn btn-success btn-block";
 		}
 		else {
@@ -19,7 +19,7 @@ var MinitestCtrl = function(view, model) {
 	}
 	
 	view.ans3.onclick = function () {
-		if (model.checkAns(2) ) {
+		if (model.checkAnsTuple(2) ) {
 			view.ans3.className = "btn btn-success btn-block";
 		}
 		else {
@@ -28,12 +28,17 @@ var MinitestCtrl = function(view, model) {
 	}
 	
 	view.ans4.onclick = function () {
-		if (model.checkAns(3) ) {
+		if (model.checkAnsTuple(3) ) {
 			view.ans4.className = "btn btn-success btn-block";
 		}
 		else {
 			view.ans4.className = "btn btn-danger btn-block";
 		}
+	}
+	
+	view.listenBtn.onclick = function () {
+		var thissound=document.getElementById('audio');
+		thissound.play();
 	}
 
 }

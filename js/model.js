@@ -3,14 +3,21 @@ var MinitestModel = function () {
 	var questions = [];
 	var sounds = [];
 	var answers = [];
+	var answersTuple = [];
 	var correct = [];
 	var negScore = 0;
 	var plusScore = 0;
-	var observer = new Object();
+	//var observer = new Object();
+	
+	var rightFirstArray = [];
+	
+	var obs;
+	
 	
 	this.addObserver = function(observer) {
 		console.log(observer);
 		this.observer = observer;
+		obs = observer;
 	}
 
 	var state = 0;
@@ -23,7 +30,13 @@ var MinitestModel = function () {
 	this.rightAns = function() {
 		plusScore = plusScore + 4;
 		state++;
-		this.observer.update();
+		
+		
+		
+		setTimeout(function() {
+			obs.update();
+			obs.btnReset();
+		}, 1000);
 	}
 	
 	this.wrongAns = function() {
@@ -33,6 +46,17 @@ var MinitestModel = function () {
 	
 	this.checkAns = function(ans) {
 		if (correct[state] == ans) {
+			this.rightAns();
+			return true;
+		}
+		else {
+			this.wrongAns();
+			return false;
+		}
+	}
+	
+	this.checkAnsTuple = function(ans) {
+		if (answersTuple[state][ans].correct) {
 			this.rightAns();
 			return true;
 		}
@@ -52,6 +76,10 @@ var MinitestModel = function () {
 	
 	this.getAnswers = function() {
 		return answers[state];
+	}
+	
+	this.getAnswersTuple = function() {
+		return answersTuple[state];
 	}
 	
 	this.getSound = function() {
@@ -101,11 +129,25 @@ var MinitestModel = function () {
 			questions.push(xmlItems[i].getElementsByTagName("question")[0].childNodes[0].nodeValue);
 			
 			answers[i] = new Array();
+			answersTuple[i] = new Array();
 			correct[i] = -1;
 			for (j=0; j<4; j++) {
 				(xmlItems[i].getElementsByTagName("answer")[j].attributes[0])? correct[i] = j : ""; 
 				answers[i][j] = xmlItems[i].getElementsByTagName("answer")[j].childNodes[0].nodeValue;
+				
+				if (xmlItems[i].getElementsByTagName("answer")[j].attributes[0]) {
+					answersTuple[i][j] = { 
+						"answer" : xmlItems[i].getElementsByTagName("answer")[j].childNodes[0].nodeValue,
+						"correct" : true }
+						
+				}
+				else {
+					answersTuple[i][j] = { 
+						"answer" : xmlItems[i].getElementsByTagName("answer")[j].childNodes[0].nodeValue,
+						"correct" : false }
+				}
 			}
+			answersTuple[i] = shuffle(answersTuple[i]);
 		}
 		
 		//debug
@@ -113,5 +155,25 @@ var MinitestModel = function () {
 		console.log( sounds );
 		console.log( answers );
 		console.log( correct );
+		console.log( answersTuple );
+	}
+	
+	function shuffle(array) {
+		var currentIndex = array.length, temporaryValue, randomIndex ;
+
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+		}
+
+		return array;
 	}
 }

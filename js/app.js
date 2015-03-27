@@ -4,8 +4,7 @@ $(function() {
 	model.loadXmlData();
 	var view = new View(model);
 	
-	var minitestCtrl = new MinitestCtrl(view, model);
-	
 
-	
+	var minitestCtrl = new MinitestCtrl(view, model);
+
 });
