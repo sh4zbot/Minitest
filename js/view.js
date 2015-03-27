@@ -48,10 +48,11 @@ var View = function (model) {
 				"http://gracias.nu/exercises7/uploads/" +
 				model.getSound() + 
 				"' type='audio/mpeg'>Your browser does not support the audio element.</audio>";
-
+			this.listenBtn.style.display = 'block';
 			this.sound.innerHTML = audiostring;
 		}
 		else {
+			this.listenBtn.style.display = 'none';
 			this.sound.innerHTML = "";
 		}
 	}
