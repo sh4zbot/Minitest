@@ -24,6 +24,9 @@ var View = function (model) {
 	
 	this.listenBtn = document.getElementById("listen");
 	
+	this.correctSnd = document.getElementById("correctSnd");
+
+	console.log(correctSnd);
 	model.addObserver(this);
 	
 	this.update = function () {

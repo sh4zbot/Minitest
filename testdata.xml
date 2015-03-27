@@ -19,7 +19,7 @@
 		<item>
 			<question>¿Qué número es?</question>
 			<sound>20121029173734_07siete.mp3</sound>
-			<answer correct="y">7</answer>
+			<answer correct="y">7 hej det här är en ganska lång mening, hur gammal ?</answer>
 			<answer>8</answer>
 			<answer>9</answer>
 			<answer>6</answer>
