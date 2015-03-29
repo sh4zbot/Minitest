@@ -15,8 +15,8 @@ var MinitestModel = function () {
 	
 	
 	this.addObserver = function(observer) {
-		console.log(observer);
-		this.observer = observer;
+		//console.log(observer);
+		//this.observer = observer;
 		obs = observer;
 	}
 
@@ -24,7 +24,7 @@ var MinitestModel = function () {
 	
 	this.increment = function() {
 		state++;
-		this.observer.update();
+		obs.update();
 	}
 	
 	this.rightAns = function() {
@@ -41,7 +41,7 @@ var MinitestModel = function () {
 	
 	this.wrongAns = function() {
 		negScore = negScore + 1;
-		this.observer.update();
+		obs.update();
 	}
 	
 	this.checkAns = function(ans) {

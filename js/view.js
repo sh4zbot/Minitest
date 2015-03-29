@@ -8,13 +8,12 @@ var View = function (model) {
 	this.plusscore = document.getElementById("plusscore");
 	this.negscore = document.getElementById("negscore");
 	
-	
 	/*
-	var ansBtns = [];
+	this.ansButtons = [];
 	for (i=1; i<=4; i++) {
-		ansBtns.push(document.getElementById("answer" + i));
+		this.ansButtons.push(document.getElementById("answer" + i));
 	}
-	console.log(ansBtns);
+	console.log("this.ansButtons: " + this.ansButtons);
 	*/
 	
 	this.ans1 = document.getElementById("answer1");
@@ -25,8 +24,9 @@ var View = function (model) {
 	this.listenBtn = document.getElementById("listen");
 	
 	this.correctSnd = document.getElementById("correctSnd");
-
-	console.log(correctSnd);
+	this.wrongSnd = document.getElementById("wrongSnd");
+	this.scoreSnd = document.getElementById("scoreSnd");
+	
 	model.addObserver(this);
 	
 	this.update = function () {
@@ -34,10 +34,10 @@ var View = function (model) {
 		this.question.innerHTML = model.getQuestion();
 		var currAnswers = model.getAnswersTuple();
 		
-		this.ans1.innerHTML = currAnswers[0].answer;
-		this.ans2.innerHTML = currAnswers[1].answer;
-		this.ans3.innerHTML = currAnswers[2].answer;
-		this.ans4.innerHTML = currAnswers[3].answer;
+		this.ans1.innerHTML = "<span>" + currAnswers[0].answer + "</span>";
+		this.ans2.innerHTML = "<span>" + currAnswers[1].answer + "</span>";
+		this.ans3.innerHTML = "<span>" + currAnswers[2].answer + "</span>";
+		this.ans4.innerHTML = "<span>" + currAnswers[3].answer + "</span>";
 		
 		this.score.innerHTML = "puntos: " + model.getScore() + "/" + model.getLength();
 		this.plusscore.innerHTML = "" + model.getPlusScore();
@@ -54,18 +54,20 @@ var View = function (model) {
 			this.listenBtn.style.display = 'block';
 			this.sound.innerHTML = audiostring;
 		}
+		
 		else {
 			this.listenBtn.style.display = 'none';
 			this.sound.innerHTML = "";
 		}
+		
 	}
 	
 	this.btnReset = function (ansBtns) {
 		
-		this.ans1.className="btn btn-default btn-block";
-		this.ans2.className="btn btn-default btn-block";
-		this.ans3.className="btn btn-default btn-block";
-		this.ans4.className="btn btn-default btn-block";
+		this.ans1.className="btn btn-default btn-block answer-button";
+		this.ans2.className="btn btn-default btn-block answer-button";
+		this.ans3.className="btn btn-default btn-block answer-button";
+		this.ans4.className="btn btn-default btn-block answer-button";
 		
 	}
 	
