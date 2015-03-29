@@ -22,8 +22,8 @@
 .btn-circle.btn-lg {
   width: 55px;
   height: 55px;
-  padding: 0px 16px;
-  font-size: 50px;
+  padding: px px;
+  font-size: 40px;
   line-height: 1.33;
   border-radius: 27px;
 }
@@ -37,6 +37,8 @@
 	margin-left:auto;
 	margin-right:auto;
 }
+
+
 
 .glyphicon.glyphicon-headphones {
 	font-size:35px;
