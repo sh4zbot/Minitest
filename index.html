@@ -58,7 +58,7 @@
 				<hr/>
 				<div class ="row questionarea">
 					<div class="col-md-8 col-xs-8">
-						<span class="qnumber" id="questionNumber"></span>
+						<span class="qnumber label label-primary" id="questionNumber"></span>
 						<span class="question" id="question"></span>
 						<p id="sound"> </p>
 					</div>
@@ -66,7 +66,8 @@
 					
 				</div>
 				
-				<div class="row listenarea">
+				<div class="row">
+					<!-- 
 					<div class="col-xs-4" style="">
 						
 							<button class="btn btn-primary btn-circle btn-xl" id="listen" type="submit">
@@ -75,6 +76,15 @@
 							</button>
 							
 					</div>
+					 -->
+					
+					<div class="col-xs-8 listenarea">
+						<button class="btn btn-primary btn-block" id="listen" type="submit">
+								<span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+								<p>Escuchar</p>
+							</button>
+					</div>
+					
 				</div>
 				<div class="row answersarea" style="padding-top:10px">
 					
@@ -87,8 +97,23 @@
 					<div class="col-md-4 col-xs-4 ">
 						<button class="btn btn-default btn-block answer-button" id="answer3" type="submit">Answer 3</button>
 						<button class="btn btn-default btn-block answer-button" id="answer4" type="submit">Answer 4</button>
+						
 					</div>
-					<div class="col-md-2 col-xs-2">
+					<div class="col-md-1 col-xs-1">
+						
+						<div class="progress-positive">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+								60%
+							</div>
+						</div>
+		
+					</div>
+					<div class="col-xs-1">
+						<div class="progress-negative">
+							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+								10%
+							</div>
+						</div>
 					</div>
 					<div class ="col-md-2 col-xs-2">
 						<p id="score"></p>
