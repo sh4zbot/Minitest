@@ -10,6 +10,7 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans1.className = "btn btn-danger btn-block answer-button";
 		}
+		view.updateProgress();
 		this.blur();
 	}
 	
@@ -22,6 +23,7 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans2.className = "btn btn-danger btn-block answer-button";
 		}
+		view.updateProgress();
 		this.blur();
 	}
 	
@@ -34,6 +36,7 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans3.className = "btn btn-danger btn-block answer-button";
 		}
+		view.updateProgress();
 		this.blur();
 	}
 	
@@ -46,29 +49,9 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans4.className = "btn btn-danger btn-block answer-button";
 		}
+		view.updateProgress();
 		this.blur();
 	}
-	
-	$('[data-toggle="popover"]').popover({
-        placement : 'bottom',
-				container: 'body'
-    });
-	
-
-	/*
-	for (var i = 0; i<4; i++) {
-		view.ansButtons[i].onclick = function (i) {
-			console.log("in the loop i: " + i);
-			if (model.checkAnsTuple(i) ) {
-				view.correctSnd.play();
-				view.ansButtons[i].className = "btn btn-success btn-block answer-button";
-			}
-			else {
-				view.ansButtons[i].className = "btn btn-danger btn-block answer-button";
-			}
-		}
-	}
-	*/
 	
 	view.listenBtn.onmouseover = function () {
 		var thissound=document.getElementById('audio');
@@ -79,6 +62,11 @@ var MinitestCtrl = function(view, model) {
 	view.listenBtn.onclick = function () {
 		var thissound=document.getElementById('audio');
 		thissound.play();
+		this.blur();
+	}
+	
+	view.repeatBtn.onclick = function () {
+		model.reset();
 		this.blur();
 	}
 }

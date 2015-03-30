@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quiz [<!ELEMENT quiz (title, help, items)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT help (#PCDATA)>
+<!ELEMENT items (item)+>
+<!ELEMENT item (question, sound, answer, answer+)>
+<!ELEMENT question (#PCDATA)>
+<!ELEMENT answer (#PCDATA)>
+<!ELEMENT sound (#PCDATA)>
+<!ATTLIST answer correct (y) #IMPLIED>]>
+<quiz>
+	<title>Minitest</title>
+	<help>Minitest
+	Klicka på rätt alternativ till varje uppgift. Gör du rätt från början får du 4 poäng. För varje misstag du gör får du poängavdrag.
+	En del uppgifter består av att du ska lyssna på något. Då syns en Escuchar-knapp. Sätt musmarkören över knappen för att lyssna. Om du vill du lyssna flera gånger klicka på knappen.
+		
+	</help>
+	<items>
+		<item>
+			<question>¿Qué número es?</question>
+			<sound>20121029173734_07siete.mp3</sound>
+			<answer correct="y">7 hej det här är en ganska lång test-mening och även rätt svar</answer>
+			<answer>8</answer>
+			<answer>9</answer>
+			<answer>6</answer>
+		</item>
+		<item>
+			<question>7</question>
+			<sound></sound>
+			<answer correct="y">siete</answer>
+			<answer>ocho</answer>
+			<answer>nueve</answer>
+			<answer>seis</answer>
+		</item>
+		<item>
+			<question>−Hola, ¿qué tal?</question>
+			<sound></sound>
+			<answer>−Me llamo Roberto.</answer>
+			<answer correct="y">−Muy bien, gracias.</answer>
+			<answer>− Ocho y nueve.</answer>
+			<answer>−Hasta luego.</answer>
+		</item>
+		<item>
+			<question>−Adiós. ...</question>
+			<sound></sound>
+			<answer correct="y">−Hasta luego.</answer>
+			<answer>−Buenos días.</answer>
+			<answer>−Me llamo Pedro.</answer>
+			<answer>−Muy bien.</answer>
+		</item>
+		<item>
+			<question>diez, cinco, siete</question>
+			<sound></sound>
+			<answer correct="y">10, 5, 7</answer>
+			<answer>10, 7, 5</answer>
+			<answer>5, 7, 10</answer>
+			<answer>7, 5, 10</answer>
+		</item>
+	</items>
+</quiz>

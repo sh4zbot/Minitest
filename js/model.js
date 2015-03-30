@@ -23,18 +23,26 @@ var MinitestModel = function () {
 	var state = 0;
 	
 	this.increment = function() {
-		state++;
-		obs.update();
+		if (state <= this.getLength()) {
+			state++;
+			obs.update();
+		}
 	}
 	
 	this.rightAns = function() {
 		plusScore = plusScore + 4;
 		state++;
-		
-		setTimeout(function() {
-			obs.update();
-			obs.btnReset();
-		}, 1000);
+		if (state == this.getLength()) {
+			obs.scoreSnd.play();
+			$('#myModal').modal('show');
+		}
+		else {
+			
+			setTimeout(function() {
+				obs.update();
+				obs.btnReset();
+			}, 1000);
+		}
 	}
 	
 	this.wrongAns = function() {
@@ -66,6 +74,15 @@ var MinitestModel = function () {
 	
 	this.getState = function() {
 		return state;
+	}
+	
+	this.reset = function() {
+		state = 0;
+		negScore = 0;
+		plusScore = 0;
+		obs.update();
+		obs.updateProgress();
+		obs.btnReset();
 	}
 	
 	this.getQuestion = function() {
@@ -114,7 +131,7 @@ var MinitestModel = function () {
 		}
 
 		//testdata from http://gracias.nu/exercises7/actions_s.php?item=quiz&action=getXMLwSound&quizid=13
-		xhttp.open("GET","testdata.xml",false);
+		xhttp.open("GET","testdata-small.xml",false);
 		xhttp.send();
 		xmlDoc=xhttp.responseXML;
 

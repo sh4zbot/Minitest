@@ -2,9 +2,9 @@ $(function() {
 
 	var model = new MinitestModel();
 	model.loadXmlData();
-	var view = new View(model);
-	
+	var testView = new TestView(model);
 
-	var minitestCtrl = new MinitestCtrl(view, model);
+
+	var minitestCtrl = new MinitestCtrl(testView, model);
 
 });

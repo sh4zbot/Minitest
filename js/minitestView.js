@@ -1,5 +1,4 @@
-//DishdetailView Object constructor
-var View = function (model) {
+var TestView = function (model) {
 	
 	model.addObserver(this);
 	
@@ -9,7 +8,6 @@ var View = function (model) {
 	this.score = document.getElementById("score");
 	this.plusscore = document.getElementById("plusscore");
 	this.negscore = document.getElementById("negscore");
-	
 	
 	//BUTTONS
 	this.ans1 = document.getElementById("answer1");
@@ -21,22 +19,31 @@ var View = function (model) {
 	this.ansbtns.push(this.ans2);
 	this.ansbtns.push(this.ans3);
 	this.ansbtns.push(this.ans4);
-	
 	this.listenBtn = document.getElementById("listen");
+	this.repeatBtn = document.getElementById("repeatBtn");
+	this.sendResultBtn = document.getElementById("sendResultBtn");
 	
 	//STATIC SOUNDS
 	this.correctSnd = document.getElementById("correctSnd");
 	this.wrongSnd = document.getElementById("wrongSnd");
 	this.scoreSnd = document.getElementById("scoreSnd");
-
+	
+	//INIT POPOVER
+	$('[data-toggle="popover"]').popover({
+        placement : 'bottom',
+				container: 'body'
+    });
+	//INIT PROGRESSBAR
+	$(document).ready(function() {
+		$('.progress .progress-bar').progressbar();
+	});
 	
 	this.update = function () {
 		this.questionNumber.innerHTML = model.getState() + 1;
 		this.question.innerHTML = model.getQuestion();
 		var currAnswers = model.getAnswersTuple();
 	
-		for (i = 0; i<4;i++) {
-			
+		for (i = 0; i<4;i++) {	
 			if (currAnswers[i].answer.length > 30) {
 				this.ansbtns[i].innerHTML = "<span>" + currAnswers[i].answer.slice(0,30) + "<br/>" +  
 				currAnswers[i].answer.slice(30,(currAnswers[i].answer.length -1)) + "</span>";
@@ -44,14 +51,11 @@ var View = function (model) {
 			else {
 				this.ansbtns[i].innerHTML = "<span>" + currAnswers[i].answer + "</span>";
 			}
-			
 		}
-			
-		this.score.innerHTML = "puntos " + model.getScore() + "/" + model.getLength() * 4;
+		
+		this.score.innerHTML = "Puntos " + model.getScore() + "/" + model.getLength() * 4;
 		this.plusscore.innerHTML = "+" + model.getPlusScore();
 		this.negscore.innerHTML = "-" + model.getNegScore();
-		
-		
 		
 		if (model.getSound() != "null") {
 			var audiostring = 
@@ -67,9 +71,11 @@ var View = function (model) {
 			this.listenBtn.style.display = 'none';
 			this.sound.innerHTML = "";
 		}
+	}
+	
+	this.updateProgress = function () {
 		var plusStyleWidth = ( model.getPlusScore() / (model.getLength() * 4) ) * 100;
 		var negStyleWidth = ( model.getNegScore() / (model.getLength()*4 ) * 100);
-		console.log("neg style width: " + negStyleWidth);
 		
 		document.getElementById("posprog").setAttribute("data-transitiongoal", plusStyleWidth);
 		document.getElementById("negprog").setAttribute("data-transitiongoal", negStyleWidth);
@@ -80,15 +86,12 @@ var View = function (model) {
 		});
 	}
 	
-	
 
 	this.btnReset = function (ansBtns) {
-		
 		this.ans1.className="btn btn-default btn-block answer-button";
 		this.ans2.className="btn btn-default btn-block answer-button";
 		this.ans3.className="btn btn-default btn-block answer-button";
 		this.ans4.className="btn btn-default btn-block answer-button";
-		
 	}
 	
 	this.update();

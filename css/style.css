@@ -1,14 +1,5 @@
-.questionarea {
-	
-}
-
-.round-button {
-	width:25%;
-}
-
 .answer-button{
 	height: 60px;
-	
 }
 
 .left-answers {
@@ -27,6 +18,13 @@
 
 .question-area {
 	height:80px;
+}
+
+.exitbtn {
+	vertical-align: middle;
+	height:35px;
+	margin-top:10px;
+	font-weight: bold;
 }
 
 .btn-circle {
@@ -55,12 +53,16 @@
 }
 .header {
 	background-color:#286090;
+	background-color:		#1A3366;
+	background-color: #337AB7;
 	padding-top:5px;
 	padding-bottom:5px;
 }
 .maincontent {
-	background-color:#E2FFFF
-
+	background-color:#E2FFFF;
+	background-color:#2952A3;
+	background-color: #70A2CD;
+	padding-bottom:10px;
 }
 
 .question {
