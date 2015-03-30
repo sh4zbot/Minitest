@@ -8,6 +8,10 @@
 
 		<!-- jQuery, only used for document ready-->
 		<script src="js/jquery.min.js"></script>
+		
+		<!-- Bootstrap JavaScript, used for help info popover -->
+		<script src="js/bootstrap.min.js"></script>	
+	
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -25,19 +29,17 @@
 				<div class="row " >
 					<div class="col-md-8 col-xs-8">
 						<h3> Minitest </h3>
-						
 					</div>
 					<div class="col-md-2 col-xs-2">
-							<button class="btn btn-info btn-circle btn-lg" id="help" type="submit"> 
+							<button class="btn btn-info btn-circle btn-lg" id="help" data-toggle="popover" title="Hjälp" data-content="Här är en hjälptext som hjälper dig att förstå övningen" type="submit"> 
 								<span class="glyphicon glyphicon-question-sign topright-btns" aria-hidden="true"></span>
 							</button>
-							
-						
 					</div>
 					<div class="col-md-2 col-xs-2">
 						<button class="btn btn-danger btn-circle btn-lg" id="exit" type="submit"> 
 							<span class="glyphicon glyphicon-remove topright-btns" aria-hidden="true"></span>
 						</button>
+						
 					</div>
 					
 				</div>
@@ -49,12 +51,8 @@
 						<p id="sound"> </p>
 					</div>
 					<div class="col-xs-2">
-						
 						<span id="score"></span>
-						
 					</div>
-
-					
 				</div>
 				
 				<div class="row">					
@@ -102,18 +100,12 @@
 		<script src="js/view.js"></script>
 		<script src="js/minitestCtrl.js"></script>
 		
-		<script>
-		
-		
-		</script>
-		
-		
+
 
 		<!-- jQuery -->
 		<!--<script src="https://code.jquery.com/jquery.js"></script> -->
 		
-		<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-		<!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>	-->
+		
 
   </body>
 </html>

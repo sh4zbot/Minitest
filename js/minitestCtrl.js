@@ -45,6 +45,10 @@ var MinitestCtrl = function(view, model) {
 		}
 	}
 	
+	$('[data-toggle="popover"]').popover({
+        placement : 'bottom'
+    });
+	
 
 	/*
 	for (var i = 0; i<4; i++) {
