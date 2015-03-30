@@ -10,6 +10,7 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans1.className = "btn btn-danger btn-block answer-button";
 		}
+		this.blur();
 	}
 	
 	view.ans2.onclick = function () {
@@ -21,6 +22,7 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans2.className = "btn btn-danger btn-block answer-button";
 		}
+		this.blur();
 	}
 	
 	view.ans3.onclick = function () {
@@ -32,6 +34,7 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans3.className = "btn btn-danger btn-block answer-button";
 		}
+		this.blur();
 	}
 	
 	view.ans4.onclick = function () {
@@ -43,10 +46,12 @@ var MinitestCtrl = function(view, model) {
 			view.wrongSnd.play();
 			view.ans4.className = "btn btn-danger btn-block answer-button";
 		}
+		this.blur();
 	}
 	
 	$('[data-toggle="popover"]').popover({
-        placement : 'bottom'
+        placement : 'bottom',
+				container: 'body'
     });
 	
 
@@ -68,6 +73,12 @@ var MinitestCtrl = function(view, model) {
 	view.listenBtn.onmouseover = function () {
 		var thissound=document.getElementById('audio');
 		thissound.play();
+		this.blur();
 	}
-
+	
+	view.listenBtn.onclick = function () {
+		var thissound=document.getElementById('audio');
+		thissound.play();
+		this.blur();
+	}
 }

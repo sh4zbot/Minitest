@@ -44,6 +44,7 @@ var View = function (model) {
 			else {
 				this.ansbtns[i].innerHTML = "<span>" + currAnswers[i].answer + "</span>";
 			}
+			
 		}
 			
 		this.score.innerHTML = "puntos " + model.getScore() + "/" + model.getLength() * 4;
@@ -69,10 +70,18 @@ var View = function (model) {
 		var plusStyleWidth = ( model.getPlusScore() / (model.getLength() * 4) ) * 100;
 		var negStyleWidth = ( model.getNegScore() / (model.getLength()*4 ) * 100);
 		console.log("neg style width: " + negStyleWidth);
-		document.getElementById("posprog").style.width = plusStyleWidth  + "%";
-		document.getElementById("negprog").style.width = negStyleWidth + "%";
+		
+		document.getElementById("posprog").setAttribute("data-transitiongoal", plusStyleWidth);
+		document.getElementById("negprog").setAttribute("data-transitiongoal", negStyleWidth);
+		console.log("data: " + document.getElementById("posprog").getAttribute("data-transitiongoal"));
+
+		$(document).ready(function() {
+			$('.progress .progress-bar').progressbar();
+		});
 	}
 	
+	
+
 	this.btnReset = function (ansBtns) {
 		
 		this.ans1.className="btn btn-default btn-block answer-button";
