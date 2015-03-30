@@ -31,8 +31,6 @@ var MinitestModel = function () {
 		plusScore = plusScore + 4;
 		state++;
 		
-		
-		
 		setTimeout(function() {
 			obs.update();
 			obs.btnReset();
