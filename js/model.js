@@ -32,9 +32,31 @@ var MinitestModel = function () {
 	this.rightAns = function() {
 		plusScore = plusScore + 4;
 		state++;
+		console.log(negScore / plusScore);
 		if (state == this.getLength()) {
+		console.log(negScore);
 			obs.scoreSnd.play();
-			$('#myModal').modal('show');
+			if (negScore == 0) {
+				document.getElementById('myModalLabel').innerHTML = "¡Fantastico! ¡Todo correcto!";
+			}
+			else if	(plusScore == 0) {
+				document.getElementById('myModalLabel').innerHTML = "¡Tienes que estudiar más!";	
+			}
+			else if (negScore / plusScore <= 0.05 ) {
+				document.getElementById('myModalLabel').innerHTML = "¡Muy bien!";		
+			}
+			else if (negScore / plusScore <= 0.15 ) {
+				document.getElementById('myModalLabel').innerHTML = "Bien.";		
+			}
+			else {
+				document.getElementById('myModalLabel').innerHTML = "¡Tienes que estudiar más!";	
+			}
+			
+			document.getElementById('finalScore').innerHTML = "PUNTOS: "+ ((this.getLength()*4) - negScore ) + "/" + this.getLength()*4;
+			$('#myModal').modal({
+				backdrop: 'static',
+				keyboard: false
+			})
 		}
 		else {
 			

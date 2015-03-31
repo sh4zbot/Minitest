@@ -24,7 +24,9 @@
 	vertical-align: middle;
 	height:35px;
 	margin-top:10px;
+	margin-left:-10px;
 	font-weight: bold;
+	
 }
 
 .btn-circle {
@@ -51,6 +53,12 @@
 	font-size:24px;
 	padding: 5px 5px 5px 5px;
 }
+
+.title{
+	font-weight:bold;
+	color:white;
+}
+
 .header {
 	background-color:#286090;
 	background-color:		#1A3366;
@@ -58,6 +66,7 @@
 	padding-top:5px;
 	padding-bottom:5px;
 }
+
 .maincontent {
 	background-color:#E2FFFF;
 	background-color:#2952A3;
@@ -68,17 +77,14 @@
 .question {
 	font-size:24px;
 }
+
 .minitest-content{  
 	width:550px; 
 	height:410px;
-	
-	
-	
 }
 .popover{
     max-width: 200px; 
 }
-
 
 #listen {
 	font-size:20px;

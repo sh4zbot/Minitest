@@ -31,7 +31,8 @@ var TestView = function (model) {
 	//INIT POPOVER
 	$('[data-toggle="popover"]').popover({
         placement : 'bottom',
-				container: 'body'
+				container: 'body',
+				html: true
     });
 	//INIT PROGRESSBAR
 	$(document).ready(function() {

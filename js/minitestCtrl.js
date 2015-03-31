@@ -59,11 +59,19 @@ var MinitestCtrl = function(view, model) {
 		this.blur();
 	}
 	
+	/*
 	view.listenBtn.onclick = function () {
 		var thissound=document.getElementById('audio');
 		thissound.play();
 		this.blur();
 	}
+	*/
+	
+	view.listenBtn.addEventListener('click',function(){
+    var thissound=document.getElementById('audio');
+		thissound.play();
+		this.blur();
+	});
 	
 	view.repeatBtn.onclick = function () {
 		model.reset();
