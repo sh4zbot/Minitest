@@ -52,6 +52,9 @@
 	font-weight: bold;
 	font-size:24px;
 	padding: 5px 5px 5px 5px;
+	color:white;
+	background-color: #337AB7;
+	border-radius:8px;
 }
 
 .title{
@@ -85,6 +88,15 @@
 .popover{
     max-width: 200px; 
 }
+.puntos {
+	color:white;
+	padding: 5px 10px 5px 5px;
+	margin-left:-5px;
+	color:white;
+	background-color: #337AB7;
+	border-radius:8px;
+	font-weight:bold;
+}
 
 #listen {
 	font-size:20px;
@@ -92,4 +104,17 @@
 
 #listen .glyphicon {
 	font-size:18px;
+}
+#finalScore {
+	font-size:25px;
+	font-weight:bold;
+}
+.modal-title {
+	font-size:24px;
+}
+
+.custom-modal {
+	text-align:center;
+	
+	!important;
 }

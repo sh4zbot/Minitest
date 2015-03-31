@@ -34,25 +34,27 @@ var MinitestModel = function () {
 		state++;
 		console.log(negScore / plusScore);
 		if (state == this.getLength()) {
+		state--;
 		console.log(negScore);
+			obs.score.innerHTML = "Puntos " + this.getScore() + "/" + this.getLength() * 4;
 			obs.scoreSnd.play();
 			if (negScore == 0) {
-				document.getElementById('myModalLabel').innerHTML = "¡Fantastico! ¡Todo correcto!";
+				document.getElementById('myModalLabel').innerHTML = "\u00A1Fantastico! \u00A1Todo correcto!";
 			}
 			else if	(plusScore == 0) {
-				document.getElementById('myModalLabel').innerHTML = "¡Tienes que estudiar más!";	
+				document.getElementById('myModalLabel').innerHTML = "\u00A1Tienes que estudiar m\xE1s!";	
 			}
 			else if (negScore / plusScore <= 0.05 ) {
-				document.getElementById('myModalLabel').innerHTML = "¡Muy bien!";		
+				document.getElementById('myModalLabel').innerHTML = "\u00A1Muy bien!";		
 			}
 			else if (negScore / plusScore <= 0.15 ) {
 				document.getElementById('myModalLabel').innerHTML = "Bien.";		
 			}
 			else {
-				document.getElementById('myModalLabel').innerHTML = "¡Tienes que estudiar más!";	
+				document.getElementById('myModalLabel').innerHTML = "\u00A1Tienes que estudiar m\xE1s!";	
 			}
 			
-			document.getElementById('finalScore').innerHTML = "PUNTOS: "+ ((this.getLength()*4) - negScore ) + "/" + this.getLength()*4;
+			document.getElementById('finalScore').innerHTML = "PUNTOS " + this.getScore() + "/" + this.getLength() * 4;
 			$('#myModal').modal({
 				backdrop: 'static',
 				keyboard: false

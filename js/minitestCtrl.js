@@ -1,6 +1,5 @@
 var MinitestCtrl = function(view, model) {
-	
-	
+
 	view.ans1.onclick = function () {
 		if (model.checkAnsTuple(0) ) {
 			view.correctSnd.play();
@@ -58,14 +57,6 @@ var MinitestCtrl = function(view, model) {
 		thissound.play();
 		this.blur();
 	}
-	
-	/*
-	view.listenBtn.onclick = function () {
-		var thissound=document.getElementById('audio');
-		thissound.play();
-		this.blur();
-	}
-	*/
 	
 	view.listenBtn.addEventListener('click',function(){
     var thissound=document.getElementById('audio');

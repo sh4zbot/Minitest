@@ -39,6 +39,7 @@ var TestView = function (model) {
 		$('.progress .progress-bar').progressbar();
 	});
 	
+	
 	this.update = function () {
 		this.questionNumber.innerHTML = model.getState() + 1;
 		this.question.innerHTML = model.getQuestion();

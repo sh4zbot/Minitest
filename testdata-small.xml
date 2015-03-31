@@ -25,6 +25,22 @@
 			<answer>6</answer>
 		</item>
 		<item>
+			<question>¿Qué número es?</question>
+			<sound>20121029173900_09nueve.mp3</sound>
+			<answer correct="y">9</answer>
+			<answer>7</answer>
+			<answer>6</answer>
+			<answer>8</answer>
+		</item>
+		<item>
+			<question>Lyssna. Vad kan du svara på denna fråga.</question>
+			<sound>20121029174123_01 holaComoTeLlamas.mp3</sound>
+			<answer correct="y">Me llamo Eva.</answer>
+			<answer>Muy bien.</answer>
+			<answer>¿Qué tal?</answer>
+			<answer>Tres.</answer>
+		</item>
+		<item>
 			<question>7</question>
 			<sound></sound>
 			<answer correct="y">siete</answer>
@@ -56,5 +72,22 @@
 			<answer>5, 7, 10</answer>
 			<answer>7, 5, 10</answer>
 		</item>
+		<item>
+			<question>bra</question>
+			<sound></sound>
+			<answer correct="y">bien</answer>
+			<answer>gracias</answer>
+			<answer>y</answer>
+			<answer>tú</answer>
+		</item>
+		<item>
+			<question>te llamas</question>
+			<sound></sound>
+			<answer correct="y">du heter</answer>
+			<answer>jag heter</answer>
+			<answer>han heter</answer>
+			<answer>bra, tack</answer>
+		</item>
+		
 	</items>
 </quiz>
